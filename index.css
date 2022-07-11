@@ -1,0 +1,14 @@
+tr {
+    height: 41px;
+    line-height: 41px;
+    min-height: 41px;
+    max-height: 41px;
+    text-align: center;
+}
+
+
+td {
+    text-align: center;
+    fill-opacity: 50%;
+}
+

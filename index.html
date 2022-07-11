@@ -3,43 +3,59 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="index.css">
     <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         rel="stylesheet">
 </head>
 
-    <body>
-        <div>
-            <h1>Hi there!</h1>
-        </div>
-
-        <div class="container-fluid">
+    <body style="margin:10px">
             <div class="row">
-                <div class="col-3">
-                    {% include 'card.html' %}
+                {% for card in cards: %}
+                <div class="col-3 card" style="padding:10px; height:300px">
+                    <table class="table table-striped" style="height:300px">
+                        <tr>
+                            <td>
+                                Soil Hydraulic Conductivity
+                            </td>
+                            <td class="bg-{{card.get_color(card.get_k())}}">
+                                {{ card.get_k() }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Total Annual Precipitaiton
+                            </td>
+                            <td class="bg-{{card.get_color(card.get_precip())}}">
+                                {{ card.get_precip() }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Average Annual Temperature
+                            </td>
+                            <td class="bg-{{card.get_color(card.get_temp())}}">
+                                {{ card.get_temp() }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Ground slope
+                            </td>
+                            <td class="bg-{{card.get_color(card.get_slope())}}">
+                                {{ card.get_slope() }}
+                            </td>
+                        </tr>
+                        <tr class="table-info">
+                            <td>
+                                Water Table Depth
+                            </td>
+                            <td>
+                                {{ card.get_wtd() }}
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="col-3">
-                    {% include 'card.html' %}
-                </div>
-                <div class="col-3">
-                    {% include 'card.html' %}
-                </div>
-                <div class="col-3">
-                    {% include 'card.html' %}
-                </div>
-            </div>
-            <div class="row">
-                <!-- {% for card in cards: %}
-                <div>
-                    <tr>
-                        <td>
-                            Soil Hydraulic Conductivity
-                        </td>
-                        <td>
-                            {{ card.get_k() }}
-                        </td>
-                    </tr>
-                </div>
-                {% endfor%} -->
+                {% endfor%}
             </div>
         </div>
 

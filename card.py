@@ -40,7 +40,7 @@ class Card:
 
     def get_temp(self):
 
-        return self._tem
+        return self._temp
 
     def get_precip(self):
 
@@ -52,4 +52,12 @@ class Card:
 
     def get_wtd(self):
 
-        return self.wtd
+        return self._wtd
+
+    def get_color(self, var):
+        if (var == "Low"):
+            return "success"
+        elif (var == "Medium"):
+            return "warning"
+        else:
+            return "danger"
