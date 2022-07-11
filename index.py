@@ -6,8 +6,7 @@ from card import Card
 
 app = Flask(__name__, template_folder='.')
 
-@app.route('/', methods=['GET'])
-@app.route('/index', methods=['GET'])
+@app.route('/')
 def index():
     cards = get_cards(100)
     html = render_template('index.html', cards=cards)
