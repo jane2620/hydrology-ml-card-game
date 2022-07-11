@@ -3,13 +3,22 @@ from flask import Flask, request, make_response, redirect, url_for
 from flask import render_template, session
 import numpy as np
 from card import Card
+from urllib.parse import urlparse
 
 app = Flask(__name__, template_folder='.')
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    cards = get_cards(100)
-    html = render_template('index.html', cards=cards)
+    html = render_template('index.html')
+    response = make_response(html)
+    return response
+
+
+@app.route('/cards', methods=['GET', 'POST'])
+def card_page():
+    num_cards = request.args.get('num_cards')
+    cards = get_cards(num_cards)
+    html = render_template('cards.html', cards=cards, num_cards=num_cards)
     response = make_response(html)
     return response
 
@@ -25,8 +34,9 @@ def get_value(dist):
 
 
 def get_cards(num_cards):
+    if (num_cards is None or num_cards is ""): return "Oh no!"
     cards = []
-    n_cards = num_cards
+    n_cards = int(num_cards)
 
 
     k_high = [.2, .5, 1]

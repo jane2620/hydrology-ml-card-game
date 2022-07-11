@@ -9,56 +9,34 @@
 </head>
 
     <body style="margin:10px">
-            <div class="row">
-                {% for card in cards: %}
-                <div class="col-3 card" style="padding:10px; height:300px">
-                    <table class="table table-striped" style="height:300px">
-                        <tr>
-                            <td>
-                                Soil Hydraulic Conductivity
-                            </td>
-                            <td class="bg-{{card.get_color(card.get_k())}}">
-                                {{ card.get_k() }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Total Annual Precipitaiton
-                            </td>
-                            <td class="bg-{{card.get_color(card.get_precip())}}">
-                                {{ card.get_precip() }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Average Annual Temperature
-                            </td>
-                            <td class="bg-{{card.get_color(card.get_temp())}}">
-                                {{ card.get_temp() }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Ground slope
-                            </td>
-                            <td class="bg-{{card.get_color(card.get_slope())}}">
-                                {{ card.get_slope() }}
-                            </td>
-                        </tr>
-                        <tr class="table-info">
-                            <td>
-                                Water Table Depth
-                            </td>
-                            <td>
-                                {{ card.get_wtd() }}
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                {% endfor%}
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6" style="text-align:center">
+                <h1>Hydrology ML Card Game</h1>
             </div>
+            <div class="col-3"></div>
         </div>
+        <br>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6" style="text-align:center">
+                <h3>Generate Cards</h3>
 
+                <form action="/cards" method="GET" class="needs-validation" novalidate>
+
+                    <div class="form-group">
+                        <label for="num_cards">Number of Cards:</label>
+                        <input type="number" min = '1'  max='1000' class="form-control" value="{{num_cards if num_cards}}" id="num_cards" name="num_cards" required>
+                        <div class="invalid-feedback">Must be a number between 1 and 1000</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+
+
+            </div>
+            <div class="col-3"></div>
+        </div>
     </body>
 
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
