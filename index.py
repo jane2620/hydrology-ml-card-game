@@ -65,5 +65,3 @@ def get_cards(num_cards):
 
 def main():
     pass
-
-main()
