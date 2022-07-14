@@ -26,13 +26,13 @@
 
                     <div class="form-group">
                         <label for="num_train_cards">Number of Training Cards:</label>
-                        <input type="number" min = '1'  max='1000' class="form-control" value="{{num_train_cards if num_train_cards}}" id="num_train_cards" name="num_train_cards" required>
-                        <div class="invalid-feedback">Must be a number between 1 and 1000</div>
+                        <input type="number" min = '0'  max='1000' class="form-control" value="{{num_train_cards if num_train_cards}}" id="num_train_cards" name="num_train_cards" required>
+                        <div class="invalid-feedback">Must be a number between 0 and 1000</div>
                     </div>
                     <div class="form-group">
                         <label for="num_test_cards">Number of Testing Cards:</label>
-                        <input type="number" min = '1'  max='1000' class="form-control" value="{{num_test_cards if num_test_cards}}" id="num_test_cards" name="num_test_cards" required>
-                        <div class="invalid-feedback">Must be a number between 1 and 1000</div>
+                        <input type="number" min = '0'  max='1000' class="form-control" value="{{num_test_cards if num_test_cards}}" id="num_test_cards" name="num_test_cards" required>
+                        <div class="invalid-feedback">Must be a number between 0 and 1000</div>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
