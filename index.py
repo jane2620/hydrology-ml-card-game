@@ -22,7 +22,7 @@ def card_page():
     train_cards, test_cards, key_cards = get_cards(num_train_cards, 
     num_test_cards)
 
-    card_html = 'fakecards.html'
+    card_html = 'cards.html'
 
     html = render_template(card_html, train_cards=train_cards, 
                             test_cards=test_cards, 
