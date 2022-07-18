@@ -3,9 +3,10 @@
 <html>
 
 <head>
-    <!-- <link rel="stylesheet" href="index.css"> -->
     <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
 
     <script src="bootstrap.min.js">
     </script>
@@ -16,7 +17,9 @@
             <div class="row">
                 {% for card in train_cards: %}
                 <div class="col-3 card" style="padding:10px">
-                    <p> {{card.get_num() }}</p>
+                    <div class="card-header">
+                        <p> {{card.get_num() }}</p>
+                    </div>
                     <table class="table table-striped">
                         <tr>
                             <td>
