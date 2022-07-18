@@ -1,11 +1,11 @@
 
-from flask import Flask, request, make_response, redirect, url_for
-from flask import render_template, session
+from flask import Flask, request, make_response
+from flask import render_template
 import numpy as np
 from card import Card
 from urllib.parse import urlparse
 
-app = Flask(__name__, template_folder='.')
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
