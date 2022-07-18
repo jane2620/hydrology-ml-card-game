@@ -18,13 +18,11 @@ def index():
 def card_page():
     num_train_cards = request.args.get('num_train_cards')
     num_test_cards = request.args.get('num_test_cards')
-    var_type = request.args.get('variable_type')
 
     train_cards, test_cards, key_cards = get_cards(num_train_cards, 
     num_test_cards)
 
-    if (var_type == "wtd_vars"): card_html = 'cards.html'
-    else: card_html = 'fakecards.html'
+    card_html = 'fakecards.html'
 
     html = render_template(card_html, train_cards=train_cards, 
                             test_cards=test_cards, 

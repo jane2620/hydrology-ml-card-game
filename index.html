@@ -34,20 +34,6 @@
                         <input type="number" min = '0'  max='1000' class="form-control" value="{{num_test_cards if num_test_cards}}" id="num_test_cards" name="num_test_cards" required>
                         <div class="invalid-feedback">Must be a number between 0 and 1000</div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="variable_type" id="gridRadios1" value="wtd_vars" checked>
-                            <label class="form-check-label" for="wtd_vars">
-                              WTD Variables
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="variable_type" id="gridRadios2" value="filler_vars">
-                            <label class="form-check-label" for="filler_vars">
-                              Filler Variables
-                            </label>
-                          </div>
-                      </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form>
@@ -58,18 +44,34 @@
         </div>
         <br>
         <br>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <h5>How the site works:</h5>
+                <p>Users can generate a training and testing set of hydrology playing cards (as seen below). The goal is to study the training cards, and use these patterns to make predictions about the testing cards.</p>
+                <p>After inputting the desired number of cards and clicking 'Submit', you will be brought to a new page with a <strong>'Training Set', 'Testing Set', and 'Testing Set Key'</strong>, so don't scroll down too quickly!</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
         
         <div class="row">
             <div class="col-1"></div>
             <div class="col-4">
-                <img class="img-fluid" src="example_card.png" alt="Example Training Card">
+                <img class="img-fluid" src='/static/example_card.png' alt="Example Training Card">
+                
             </div>
             <div class="col-6">
-                <p>explanation</p>
+                <h5>To the left is an example <em>training card.</em></h5>
+                <p>Each card represents a site with a certain set of characteristics, represented by our input variables. We want to predict the water table depth at these sites using patterns we learn from our training data.</p>
+                <p>Training cards have <strong>four input variables</strong>, as outlined in the table below, and <strong>one output variable</strong>, water table depth. </p>
+                <p>Input variables can either be <strong>'Low', 'Medium', or 'High'</strong>. For example, a 'Low' value for Total Annual Precipitation would indicate that this site does not experience a lot of rainfall each year. </p>
+                <p>The output variable, water table depth, can only be <strong>'Low' or 'High'.</strong> For our <em>testing</em> cards, the output variable will be blank so you can make your predictions!</p>
             </div>
             <div class="col-1"></div>  
         </div>
 
+        <br>
+        <br>
 
         <div class="row">
             <div class="col-1"></div>  
